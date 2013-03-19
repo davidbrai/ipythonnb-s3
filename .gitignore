@@ -1,0 +1,5 @@
+.venv
+.project
+.pydevproject
+*.ipynb
+*.pyc
