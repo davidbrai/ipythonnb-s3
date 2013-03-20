@@ -1,19 +1,23 @@
 import datetime
 
-from IPython.frontend.html.notebook.nbmanager import NotebookManager
-from IPython.nbformat import current
-
 from tornado import web
 
 import boto
 
+from IPython.frontend.html.notebook.nbmanager import NotebookManager
+from IPython.nbformat import current
+from IPython.utils.traitlets import Unicode
+
 class S3NotebookManager(NotebookManager):
     
+    aws_access_key_id = Unicode('', config=True, help='AWS access key id.')
+    aws_secret_access_key = Unicode('', config=True, help='AWS secret access key.')
+    aws_bucket = Unicode('', config=True, help='Bucket name for notebooks.')
+    
     def __init__(self, **kwargs):
-        #TODO insert aws keys from config
-        self.s3_con = boto.connect_s3()
-        self.bucket = self.s3_con.get_bucket('ipynb-test')
         super(S3NotebookManager, self).__init__(**kwargs)
+        self.s3_con = boto.connect_s3(self.aws_access_key_id, self.aws_secret_access_key)
+        self.bucket = self.s3_con.get_bucket(self.aws_bucket)
     
     def load_notebook_names(self):
         self.mapping = {}
@@ -73,4 +77,4 @@ class S3NotebookManager(NotebookManager):
         return notebook_id
     
     def log_info(self):
-        self.log.info("Serving notebooks from s3")
+        self.log.info("Serving notebooks from s3. bucket name: %s" % self.aws_bucket)
