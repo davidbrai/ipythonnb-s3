@@ -14,16 +14,17 @@ It requires credentials to an AWS account.
 The plugin is not yet available as an installable python package.
 
 1. Place `s3nbmanager.py` somewhere accessible by your `PYTHONPATH`, site-packages folder for example.
-2. Create a profile for your notebook server by running:
 
-```
-ipython profile create nbserver
-```    
+2. Create a profile for your notebook server by running:   
+    ```
+    ipython profile create nbserver
+    ```    
+
 3. Edit your `ipython_notebook_config.py` file:
 
-```python
-c.NotebookApp.notebook_manager_class = 's3nbmanager.S3NotebookManager'
-c.S3NotebookManager.aws_access_key_id = '<put your aws access key id here>'
-c.S3NotebookManager.aws_secret_access_key = '<put your aws secret access key here>'
-c.S3NotebookManager.aws_bucket = 'notebooks'
-```
+    ```python
+    c.NotebookApp.notebook_manager_class = 's3nbmanager.S3NotebookManager'
+    c.S3NotebookManager.aws_access_key_id = '<put your aws access key id here>'
+    c.S3NotebookManager.aws_secret_access_key = '<put your aws secret access key here>'
+    c.S3NotebookManager.aws_bucket = 'notebooks'
+    ```
