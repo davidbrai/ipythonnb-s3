@@ -26,5 +26,5 @@ The plugin is not yet available as an installable python package.
     c.NotebookApp.notebook_manager_class = 's3nbmanager.S3NotebookManager'
     c.S3NotebookManager.aws_access_key_id = '<put your aws access key id here>'
     c.S3NotebookManager.aws_secret_access_key = '<put your aws secret access key here>'
-    c.S3NotebookManager.aws_bucket = 'notebooks'
+    c.S3NotebookManager.aws_bucket = '<put the name of the bucket you want to use>'
     ```
