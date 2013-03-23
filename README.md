@@ -4,7 +4,8 @@
 Currently working with IPython dev branch.
 
 By default the notebook server stores the notebook files in a local directory.  
-This plugin seamlessly stores and reads the notebooks files from and to an S3 bucket.
+This plugin seamlessly stores and reads the notebooks files from and to an S3 bucket.  
+It uses the great [boto](https://github.com/boto/boto) package to communicate with AWS.
 
 It requires credentials to an AWS account.
 
