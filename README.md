@@ -1,7 +1,8 @@
 # IPython notebook S3 store
 
 [IPython notebook](http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html) manager which saves to [S3](http://aws.amazon.com/s3/).
-**Currently working only with IPython dev branch**.
+
+Works with IPython 1.1.0
 
 By default the notebook server stores the notebook files in a local directory.
 This plugin seamlessly stores and reads the notebooks files from and to an S3 bucket.
