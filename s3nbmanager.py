@@ -81,5 +81,5 @@ class S3NotebookManager(NotebookManager):
         self.mapping[notebook_id] = new_name
         return notebook_id
     
-    def log_info(self):
-        self.log.info("Serving notebooks from s3. bucket name: %s" % self.aws_bucket)
+    def info_string(self):
+        return "Serving notebooks from s3. bucket name: %s" % self.s3_bucket
