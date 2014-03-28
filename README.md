@@ -12,7 +12,7 @@ It requires credentials to an AWS account.
 
 ## How to use
 
-1. Install a package:
+1. Install the package:
    
     ```
     $ git clone https://github.com/davidbrai/ipythonnb-s3.git
