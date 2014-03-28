@@ -12,10 +12,14 @@ It requires credentials to an AWS account.
 
 ## How to use
 
-The plugin is not yet available as an installable python package.
-
-1. Place `s3nbmanager.py` somewhere accessible by your `PYTHONPATH`, site-packages folder for example.
-
+1. Install a package:
+   
+    ```
+    $ git clone https://github.com/davidbrai/ipythonnb-s3.git
+    $ cd ipythonnb-s3
+    $ [sudo] python setup.py install
+    ```
+   
 2. Create a profile for your notebook server by running:
 
     ```
