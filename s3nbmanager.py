@@ -27,7 +27,7 @@ class S3NotebookManager(NotebookManager):
     def load_notebook_names(self):
         self.mapping = {}
         keys = self.bucket.list(self.s3_prefix)
-        ids = [k.name.split('/')[-1] for k in keys]
+        ids = [k.name[len(self.s3_prefix):] for k in keys]
         
         for id in ids:
             name = self.bucket.get_key(self.s3_prefix + id).get_metadata('nbname')
